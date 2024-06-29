@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        text-align: center;
+
+        font-family: "Roboto", sans-serif;
+      }
+
+      #para {
+        font-size: 60px;
+      }
+      button {
+        color: white;
+        background-color: skyblue;
+        padding: 12px;
+        border-radius: 4px;
+        border: none;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="para">0</p>
+    <button id="sub" type="submit">-</button>
+    <button id="plus" type="submit">+</button>
+    <div>
+      Increment/Decrement by:
+      <input id="input" class="changeBy" type="number" value="1" />
+    </div>
+
+    <button id="reset" type="reset">RESET</button>
+
+    <script>
+      const sub = document.getElementById("sub");
+      const plus = document.getElementById("plus");
+      const para = document.getElementById("para");
+      const reset = document.getElementById("reset");
+      const input = document.getElementById("input");
+      let count = 0;
+
+      reset.addEventListener("click", function () {
+        para.innerHTML = 0;
+        input.value=1;
+      });
+      plus.addEventListener("click", function () {
+        let inputValue =parseInt(input.value);
+        let paravalue =parseInt(para.textContent);
+        para.innerHTML = inputValue + paravalue ;
+
+      });
+      sub.addEventListener("click", function () {
+        if(para.textContent>0){
+            let inputValue =parseInt(input.value);
+        let paravalue =parseInt(para.textContent);
+        para.innerHTML =paravalue - inputValue  ;
+        }
+      
+
+      })
+     
+    </script>
+  </body>
+</html>
+
+<!--   plus.addEventListener("click",function(e){
+          
+            count++;
+            para.innerHTML=count;
+        })
+        sub.addEventListener("click",function(e){
+          if(count>0){
+
+              count--;
+              para.innerHTML=count;
+          }
+      })
+
+      reset.addEventListener("click",function(){
+        para.innerHTML=0;
+      })
+if(input.value===""){
+} -->
